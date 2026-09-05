@@ -44,11 +44,11 @@
       <div class="stamp-row">
         <span class="live">live</span>
         <span class="sep"></span>
-        <span>last updated <time datetime="2026-09-05">05 Sep 2026</time></span>
+        <span>last updated <time datetime="2026-09-06">06 Sep 2026</time></span>
         <span class="sep"></span>
         <span>wave <b>1 of 4</b></span>
         <span class="sep"></span>
-        <span><b>3</b> of <b>7</b> milestones complete</span>
+        <span><b>6</b> of <b>9</b> milestones complete</span>
       </div>
 
       <div class="status-groups">
@@ -58,20 +58,20 @@
             <li class="done"><span class="box">✓</span> Product concept, mechanism and naming finalized</li>
             <li class="done"><span class="box">✓</span> Competitive landscape, personas and risk notes documented</li>
             <li class="done"><span class="box">✓</span> Local dev environment fully operational — Docker stack, wallet, and CLI tested</li>
+            <li class="done"><span class="box">✓</span> Compact contract — Merkle issuer registry, expiry enforcement</li>
+            <li class="done"><span class="box">✓</span> End-to-end proof flow on the local devnet</li>
+            <li class="done"><span class="box">✓</span> Automated checks — end-to-end and proof-forgery regression</li>
           </ul>
         </div>
         <div class="status-group">
           <h3 class="status-group-label now">Now</h3>
           <ul class="checklist">
-            <li class="active"><span class="box"></span> Minimal Compact contract — credential verification circuit</li>
-            <li class="active"><span class="box"></span> End-to-end proof flow</li>
+            <li class="active"><span class="box"></span> Demo frontend connected end-to-end</li>
           </ul>
         </div>
         <div class="status-group">
           <h3 class="status-group-label next">Next</h3>
           <ul class="checklist">
-            <li><span class="box"></span> Demo frontend connected end-to-end</li>
-            <li><span class="box"></span> Tests</li>
             <li><span class="box"></span> Demo video</li>
             <li><span class="box"></span> Wave 1 submission</li>
           </ul>
@@ -115,19 +115,64 @@
 
         <article class="log-entry">
           <div class="log-meta">
+            <time datetime="2026-09-06">06 Sep 2026</time>
+            <span class="log-status done">done</span>
+          </div>
+          <div class="log-body">
+            <h3>Closing a privacy leak in the disclosed expiry</h3>
+            <p>Verification discloses the credential's expiry, and an exact per-credential timestamp behaves like a serial number: two posts verified by the same credential share it, so an observer could group a pseudonymous source's posts together without ever identifying them — undoing much of what the membership proof is for. Expiries are now issued rounded up to a shared quarter boundary, so everyone credentialed in the same quarter discloses the same value. Removing the disclosure entirely is designed and deferred; it depends on knowing how large the registry will be.</p>
+          </div>
+        </article>
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <time datetime="2026-09-06">06 Sep 2026</time>
+            <span class="log-status done">done</span>
+          </div>
+          <div class="log-body">
+            <h3>Credential registry — prove membership without revealing which credential</h3>
+            <p>The contract now holds a Merkle tree of credential commitments rather than one accepted credential. A source proves that one of the registered credentials is theirs, without revealing which: a reader learns that an accredited journalist verified the post, not which journalist, nor which newsroom credentialed them. Registration is gated on a registrar secret, and the subject derives its own commitment off-chain — so the credential secret never reaches the registrar.</p>
+            <p>One line carries the security: the circuit binds the Merkle path to the commitment derived from the prover's own secret. The tree's leaves are public, so without it anyone could take a valid path for someone else's credential and prove with it. A regression test plays that attacker — unregistered secret, genuine path — and fails if it is ever accepted.</p>
+          </div>
+        </article>
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <time datetime="2026-09-06">06 Sep 2026</time>
+            <span class="log-status done">done</span>
+          </div>
+          <div class="log-body">
+            <h3>Issuer type and expiry bound into the credential</h3>
+            <p>The signal stopped being binary. The commitment now binds the secret, the issuer type and the expiry together, so a source cannot re-badge itself as a different kind of issuer, or quietly extend its own validity, while reusing the same secret. The ledger records the issuer type per post rather than a bare flag — which is the signal a reader actually needs. Expiry is enforced on-chain against Midnight's block time: a past-dated credential is refused.</p>
+          </div>
+        </article>
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <time datetime="2026-09-06">06 Sep 2026</time>
+            <span class="log-status done">done</span>
+          </div>
+          <div class="log-body">
+            <h3>Contract wired end-to-end — first real proof on the devnet</h3>
+            <p>Until now the deploy and CLI scripts still targeted the scaffold contract that came with the project template, which set <code>verified = true</code> unconditionally. They are now wired to the real Vero circuit, with its constructor argument and its witness. A dependency fix that had only ever existed in the original working copy was also committed, so a clean clone finally runs: <code>npm install</code>, <code>npm run setup</code>, <code>npm run test:e2e</code> from scratch.</p>
+          </div>
+        </article>
+
+        <article class="log-entry">
+          <div class="log-meta">
             <time datetime="2026-09-05">05 Sep 2026</time>
             <span class="log-status done">done</span>
           </div>
           <div class="log-body">
             <h3>Local dev environment fully operational — Docker stack, wallet, and CLI tested</h3>
-            <p>The local Midnight dev stack (node + indexer + proof server) is running successfully via Docker. A wallet has been created with test tokens (tNight and DUST), the Compact contract has been deployed, and the CLI has been tested end-to-end: credential verification, status reading, and balance checking all work correctly. This unblocks Wave 1 development — the mechanism can now be built and tested locally.</p>
+            <p>The local Midnight dev stack (node + indexer + proof server) is running successfully via Docker. A wallet has been created with test tokens (tNight and DUST), a contract has been deployed, and the CLI plumbing — deploy, transaction submission, ledger reads and balance checking — works end to end. The contract at this point was still the project template's placeholder circuit, so nothing was being verified yet; what this unblocked was the ability to build and test the real mechanism locally.</p>
           </div>
         </article>
 
         <article class="log-entry">
           <div class="log-meta">
             <time datetime="2026-09-01">01 Sep 2026</time>
-            <span class="log-status in-progress">in progress</span>
+            <span class="log-status done">done</span>
           </div>
           <div class="log-body">
             <h3>Minimal Compact contract — compiling</h3>

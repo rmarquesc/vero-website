@@ -1,7 +1,7 @@
 # Vero — Site Copy
 
 Complete copy document for the Vero website, including all pages and the slide deck.
-Last updated: 06 Sep 2026
+Last updated: 06 Sep 2026 (post-registry)
 
 ---
 
@@ -73,7 +73,7 @@ Last updated: 06 Sep 2026
 **Four-stage schematic:**
 
 1. **Source — Holds a credential:** A professional licence, organisational credential, or accountability claim — issued by a recognised body. It stays on the source's side.
-2. **Circuit — Compact circuit:** Checks validity, expiry, issuer and scope off-chain. The credential itself is never submitted.
+2. **Circuit — Compact circuit:** Proves the credential is one of those in the issuer registry, and that it has not expired. The credential itself is never submitted — and the proof does not reveal *which* registered credential it is.
 3. **disclose() — Choose what to reveal:** The source discloses only what it chooses. Identity can be public, associated with an organisation, or private.
 4. **Render — Reader sees it:** The frontend reads the ledger and shows the verified signal next to the source or post.
 
@@ -92,7 +92,7 @@ Last updated: 06 Sep 2026
 
 - ✓ Valid professional credentials — accredited journalist, licensed doctor, registered accountant, licensed engineer, other recognised professionals
 - ✓ Recognised organisations — news outlets, research organisations, companies, crypto/Web3 organisations
-- ✓ Credential validity — valid credential, recognised issuer, scope, expiry, other policy conditions
+- ✓ Credential validity — the credential is registered by a recognised issuer, and is not expired
 - ✓ Accountability claims — an organisation can prove it is a recognised entity willing to stand behind what it publishes
 
 **Doesn't verify yet:**
@@ -173,8 +173,8 @@ Last updated: 06 Sep 2026
 
 - **Headline:** Four waves, one foundation.
 
-1. **Wave 01 · Now — Prove:** Credential → ZK proof → Verified. Prove the core mechanism end-to-end.
-2. **Wave 02 — Trust:** Issuers → Policies → Credential issuance. Define how trusted credentials enter the ecosystem, starting with a small manually maintained allowlist.
+1. **Wave 01 · Now — Prove:** Credential → ZK proof → Verified. Core mechanism proven end-to-end, with a Merkle registry of issuers and on-chain expiry.
+2. **Wave 02 — Trust:** Governance → Revocation → Public network. Move beyond one registrar: multiple issuers, credential revocation, and deployment off the local devnet.
 3. **Wave 03 — Expand:** Professionals → Organisations → Pseudonymous sources. Multiple credential types and verification policies.
 4. **Beyond — Infrastructure:** Web → Social → Crypto → APIs. Browser overlay, platform integrations, verification API, broader credential ecosystem.
 
@@ -185,15 +185,15 @@ Last updated: 06 Sep 2026
 **Done:**
 - ✓ Product concept, mechanism and naming finalized
 - ✓ Competitive landscape, personas and risk notes documented
+- ✓ Local Midnight dev stack — node, indexer, proof server
+- ✓ Compact contract — Merkle issuer registry, expiry enforcement
+- ✓ End-to-end proof flow on the local devnet
+- ✓ Automated checks — end-to-end and proof-forgery regression
 
 **Now:**
-- Minimal Compact contract — credential verification circuit
-- Local Midnight dev stack — node, indexer, proof server
-- End-to-end proof flow
+- Demo frontend connected end-to-end
 
 **Next:**
-- Demo frontend connected end-to-end
-- Tests
 - Demo video
 - Wave 1 submission
 
@@ -229,22 +229,22 @@ Last updated: 06 Sep 2026
 
 **Stamp row:**
 - live
-- last updated 05 Sep 2026
+- last updated 06 Sep 2026
 - wave 1 of 4
-- 3 of 7 milestones complete
+- 6 of 9 milestones complete
 
 **Done:**
 - ✓ Product concept, mechanism and naming finalized
 - ✓ Competitive landscape, personas and risk notes documented
 - ✓ Local dev environment fully operational — Docker stack, wallet, and CLI tested
+- ✓ Compact contract — Merkle issuer registry, expiry enforcement
+- ✓ End-to-end proof flow on the local devnet
+- ✓ Automated checks — end-to-end and proof-forgery regression
 
 **Now:**
-- Minimal Compact contract — credential verification circuit
-- End-to-end proof flow
+- Demo frontend connected end-to-end
 
 **Next:**
-- Demo frontend connected end-to-end
-- Tests
 - Demo video
 - Wave 1 submission
 
@@ -256,19 +256,35 @@ Last updated: 06 Sep 2026
 - **Headline:** What's been happening.
 - **Lede:** Newest first. Each entry is one step forward — finished, in progress, or blocked.
 
-**Entry 1 — 05 Sep 2026 · done**
-- **Title:** Local dev environment fully operational — Docker stack, wallet, and CLI tested
-- **Body:** The local Midnight dev stack (node + indexer + proof server) is running successfully via Docker. A wallet has been created with test tokens (tNight and DUST), the Compact contract has been deployed, and the CLI has been tested end-to-end: credential verification, status reading, and balance checking all work correctly. This unblocks Wave 1 development — the mechanism can now be built and tested locally.
+**Entry 1 — 06 Sep 2026 · done**
+- **Title:** Closing a privacy leak in the disclosed expiry
+- **Body:** Verification discloses the credential's expiry, and an exact per-credential timestamp behaves like a serial number — two posts verified by the same credential share it, so an observer could group a pseudonymous source's posts without ever identifying them. Expiries are now issued rounded up to a shared quarter boundary. Removing the disclosure entirely is designed and deferred.
 
-**Entry 2 — 01 Sep 2026 · in progress**
+**Entry 2 — 06 Sep 2026 · done**
+- **Title:** Credential registry — prove membership without revealing which credential
+- **Body:** A Merkle tree of credential commitments replaces the single accepted credential. A source proves that one of the registered credentials is theirs, without revealing which. Registration is gated on a registrar secret; the subject derives its own commitment off-chain. The circuit binds the Merkle path to the prover's own commitment — without that, a public path alone would forge a proof — and a regression test plays that attacker.
+
+**Entry 3 — 06 Sep 2026 · done**
+- **Title:** Issuer type and expiry bound into the credential
+- **Body:** The commitment binds secret, issuer type and expiry together, so a source cannot re-badge itself or extend its own validity while reusing a secret. The ledger records the issuer type per post rather than a bare flag. Expiry is enforced on-chain against block time.
+
+**Entry 4 — 06 Sep 2026 · done**
+- **Title:** Contract wired end-to-end — first real proof on the devnet
+- **Body:** The deploy and CLI scripts still targeted the project template's placeholder circuit. They are now wired to the real Vero circuit. A dependency fix that had only existed in the original working copy was also committed, so a clean clone runs from scratch.
+
+**Entry 5 — 05 Sep 2026 · done**
+- **Title:** Local dev environment fully operational — Docker stack, wallet, and CLI tested
+- **Body:** The local Midnight dev stack (node + indexer + proof server) is running successfully via Docker. A wallet has been created with test tokens (tNight and DUST), a contract has been deployed, and the CLI plumbing — deploy, transaction submission, ledger reads and balance checking — works end to end. The contract at this point was still the project template's placeholder circuit, so nothing was being verified yet.
+
+**Entry 6 — 01 Sep 2026 · done**
 - **Title:** Minimal Compact contract — compiling
 - **Body:** The credential-verification circuit is being written in Compact. Currently working through the validity checks (issuer allowlist, expiry, scope) and getting the contract to compile cleanly against the local Midnight dev stack.
 
-**Entry 3 — 01 Sep 2026 · done**
+**Entry 7 — 01 Sep 2026 · done**
 - **Title:** Product concept and positioning refined
 - **Body:** Vero is now positioned as a verifiable credibility layer — not just identity verification. The core distinction: credibility is the product value, privacy/selective disclosure is a capability. Identity is optional: a source can be fully identified, associated with an organisation, or pseudonymous. The architecture — source → Compact circuit → selective disclosure → frontend — is settled, and the name "Vero" is chosen.
 
-**Entry 4 — 01 Sep 2026 · done**
+**Entry 8 — 01 Sep 2026 · done**
 - **Title:** Competitive landscape, personas and risk notes documented
 - **Body:** Comparison against platform verification, Community Notes, fact-checking, C2PA/Content Credentials, and professional credentials; three personas (reader, credentialed professional, organisation); and risk notes captured in the repo README. This is the foundation the rest of Wave 1 builds on.
 
@@ -318,7 +334,7 @@ Last updated: 06 Sep 2026
 - **Headline:** From "an authority says so" to "a proof says so."
 - **Steps:**
   1. Source holds a credential (journalist, professional, organisation)
-  2. Compact circuit checks validity (issuer, expiry, scope)
+  2. Compact circuit proves the credential is in the issuer registry, and unexpired
   3. Source discloses only what it chooses
   4. Reader sees a cryptographically verified signal
 - **Callout:** Identity and credibility are separate dimensions.
@@ -337,12 +353,10 @@ Last updated: 06 Sep 2026
 
 - **Label:** Demo
 - **Headline:** Verified badge, on-chain.
-- **Placeholder:** [ screenshot / GIF ]
-- **Caption:** Demo: Verified badge rendered on a post
+- **Terminal transcript:** live CLI run — verify a post, then read it back
 - **Meta:**
-  - Credential verified on-chain
-  - Transaction ID: 002a50…
-  - Block height: 3669
+  - Registry membership proven — without revealing which credential. Expiry enforced on-chain.
+  - Local Midnight devnet · block 5995
 
 ### Slide 6 — Roadmap
 
@@ -352,13 +366,14 @@ Last updated: 06 Sep 2026
 **Wave 1 · Prove (Aug 27 – Sep 16):**
 - ✓ Concept, personas, competitive landscape
 - ✓ Local dev stack operational
-- → Compact contract + end-to-end proof flow
+- ✓ Compact contract + end-to-end proof flow
+- ✓ Merkle issuer registry + expiry enforcement
 - → Demo frontend + video
 
 **Wave 2 · Trust (Sep – Oct):**
-- First issuer / trust-registry model
-- Credential issuance
-- Automated testing
+- Multiple registrars and issuer governance
+- Credential revocation
+- Public-network deployment
 
 **Wave 3 · Expand (Oct – Nov):**
 - Multiple credential types

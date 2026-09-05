@@ -1314,3 +1314,27 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
 }
 
 
+
+/* ==========================================================
+   Slide 5 — terminal transcript
+   Replaces the screenshot placeholder: until the demo frontend
+   exists, the CLI transcript is the actual demonstrable artefact.
+   ========================================================== */
+
+.demo-terminal{
+  margin:0;
+  padding:26px 28px;
+  font-family:var(--mono);
+  font-size:0.82rem;
+  line-height:1.7;
+  color:var(--text);
+  white-space:pre;
+  overflow-x:auto;
+}
+.demo-terminal .t-dim{color:var(--text-faint);}
+.demo-terminal .t-in{color:var(--violet);}
+.demo-terminal .t-ok{color:var(--cyan);}
+
+@media (max-width:720px){
+  .demo-terminal{font-size:0.7rem;padding:18px 16px;}
+}

@@ -130,7 +130,7 @@
         <div class="mech-step">
           <div class="k"><span class="num">02</span> circuit</div>
           <h3>Compact circuit</h3>
-          <p>Checks validity, expiry, issuer and scope off-chain. The credential itself is never submitted.</p>
+          <p>Proves the credential is one of those in the issuer registry, and that it has not expired. The credential itself is never submitted — and the proof does not reveal <em>which</em> registered credential it is.</p>
         </div>
         <div class="mech-step">
           <div class="k"><span class="num">03</span> disclose()</div>
@@ -174,7 +174,7 @@
           <ul>
             <li><span class="mark yes">✓</span> <b>Valid professional credentials</b> — accredited journalist, licensed doctor, registered accountant, licensed engineer, other recognised professionals</li>
             <li><span class="mark yes">✓</span> <b>Recognised organisations</b> — news outlets, research organisations, companies, crypto/Web3 organisations</li>
-            <li><span class="mark yes">✓</span> <b>Credential validity</b> — valid credential, recognised issuer, scope, expiry, other policy conditions</li>
+            <li><span class="mark yes">✓</span> <b>Credential validity</b> — the credential is registered by a recognised issuer, and is not expired</li>
             <li><span class="mark yes">✓</span> <b>Accountability claims</b> — an organisation can prove it is a recognised entity willing to stand behind what it publishes</li>
           </ul>
         </div>
@@ -359,12 +359,12 @@
         <div class="wave active">
           <div class="k">wave 01 · now</div>
           <h3>Prove</h3>
-          <p>Credential → ZK proof → Verified. Prove the core mechanism end-to-end.</p>
+          <p>Credential → ZK proof → Verified. Core mechanism proven end-to-end, with a Merkle registry of issuers and on-chain expiry.</p>
         </div>
         <div class="wave">
           <div class="k">wave 02</div>
           <h3>Trust</h3>
-          <p>Issuers → Policies → Credential issuance. Define how trusted credentials enter the ecosystem, starting with a small manually maintained allowlist.</p>
+          <p>Governance → Revocation → Public network. Move beyond one registrar: multiple issuers, credential revocation, and deployment off the local devnet.</p>
         </div>
         <div class="wave">
           <div class="k">wave 03</div>
@@ -393,21 +393,21 @@
           <ul class="checklist">
             <li class="done"><span class="box">✓</span> Product concept, mechanism and naming finalized</li>
             <li class="done"><span class="box">✓</span> Competitive landscape, personas and risk notes documented</li>
+            <li class="done"><span class="box">✓</span> Local Midnight dev stack — node, indexer, proof server</li>
+            <li class="done"><span class="box">✓</span> Compact contract — Merkle issuer registry, expiry enforcement</li>
+            <li class="done"><span class="box">✓</span> End-to-end proof flow on the local devnet</li>
+            <li class="done"><span class="box">✓</span> Automated checks — end-to-end and proof-forgery regression</li>
           </ul>
         </div>
         <div class="status-group">
           <h3 class="status-group-label now">Now</h3>
           <ul class="checklist">
-            <li class="active"><span class="box"></span> Minimal Compact contract — credential verification circuit</li>
-            <li class="active"><span class="box"></span> Local Midnight dev stack — node, indexer, proof server</li>
-            <li class="active"><span class="box"></span> End-to-end proof flow</li>
+            <li class="active"><span class="box"></span> Demo frontend connected end-to-end</li>
           </ul>
         </div>
         <div class="status-group">
           <h3 class="status-group-label next">Next</h3>
           <ul class="checklist">
-            <li><span class="box"></span> Demo frontend connected end-to-end</li>
-            <li><span class="box"></span> Tests</li>
             <li><span class="box"></span> Demo video</li>
             <li><span class="box"></span> Wave 1 submission</li>
           </ul>
