@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vero — Slide Deck</title>
+<meta name="description" content="Vero pitch deck — Midnight Buildathon Wave 1, September 2026.">
+<meta name="theme-color" content="#05060A">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="deck-body">
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/logo.svg" alt="Vero">
+    </a>
+    <ul class="links">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="slides.html" aria-current="page">Slides</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="deck">
+
+  <!-- ============================ SLIDE 1 — CAPA ============================ -->
+  <section class="slide slide-cover" id="s1">
+    <div class="slide-inner">
+      <p class="slide-kicker"><span class="pip"></span> Midnight Buildathon · Wave 1</p>
+      <h1 class="slide-title">Vero</h1>
+      <p class="slide-subtitle">Credibility you can <em>prove.</em></p>
+      <p class="slide-tagline">A verifiable credibility layer for online publishing,<br>built on Midnight.</p>
+      <div class="slide-foot">
+        <span>Midnight Buildathon — Wave 1</span>
+        <span class="sep"></span>
+        <span>September 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 2 — PROBLEMA ============================ -->
+  <section class="slide" id="s2">
+    <div class="slide-inner">
+      <span class="slide-num">02 / 07</span>
+      <p class="slide-label">The problem</p>
+      <h2 class="slide-h2">Publishing online is easy.<br>Proving credibility is <em>hard.</em></h2>
+      <ul class="slide-list">
+        <li>A post can come from a journalist, doctor, accountant, engineer, news outlet — or anyone.</li>
+        <li>Readers have no portable way to verify what a source can legitimately claim about itself.</li>
+        <li>Trust signals are fragmented: platform badges, screenshots, reputation, manual research.</li>
+      </ul>
+      <p class="slide-callout">Vero focuses on one narrower problem:<br>making source credibility <em>provable.</em></p>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 3 — SOLUÇÃO ============================ -->
+  <section class="slide" id="s3">
+    <div class="slide-inner">
+      <span class="slide-num">03 / 07</span>
+      <p class="slide-label">The solution</p>
+      <h2 class="slide-h2">From "an authority says so"<br>to "a <em>proof</em> says so."</h2>
+      <div class="slide-steps">
+        <div class="step">
+          <span class="step-n">1</span>
+          <p>Source holds a credential (journalist, professional, organisation)</p>
+        </div>
+        <div class="step">
+          <span class="step-n">2</span>
+          <p>Compact circuit checks validity (issuer, expiry, scope)</p>
+        </div>
+        <div class="step">
+          <span class="step-n">3</span>
+          <p>Source discloses only what it chooses</p>
+        </div>
+        <div class="step">
+          <span class="step-n">4</span>
+          <p>Reader sees a cryptographically verified signal</p>
+        </div>
+      </div>
+      <p class="slide-callout">Identity and credibility are separate dimensions.</p>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 4 — POR QUE MIDNIGHT ============================ -->
+  <section class="slide" id="s4">
+    <div class="slide-inner">
+      <span class="slide-num">04 / 07</span>
+      <p class="slide-label">Why Midnight</p>
+      <h2 class="slide-h2">Why <em>Midnight?</em></h2>
+      <ul class="slide-list">
+        <li><b>Selective disclosure</b> — prove "this publisher is credentialed" without exposing the credential</li>
+        <li><b>Compact</b> — ZK circuit complexity abstracted into TypeScript-like code (matters for design-led teams)</li>
+        <li><b>Dual-ledger model</b> — private witness data stays local, only verified outcome is anchored publicly</li>
+      </ul>
+      <p class="slide-callout">This is the exact primitive the problem needs.</p>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 5 — DEMO ============================ -->
+  <section class="slide" id="s5">
+    <div class="slide-inner">
+      <span class="slide-num">05 / 07</span>
+      <p class="slide-label">Demo</p>
+      <h2 class="slide-h2">Verified badge, <em>on-chain.</em></h2>
+      <div class="demo-frame">
+        <div class="demo-placeholder">
+          <p class="demo-label">[ screenshot / GIF ]</p>
+          <p class="demo-caption">Demo: Verified badge rendered on a post</p>
+        </div>
+      </div>
+      <ul class="slide-list demo-meta">
+        <li>Credential verified on-chain</li>
+        <li>Transaction ID: <code>002a50…</code></li>
+        <li>Block height: <code>3669</code></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 6 — ROADMAP ============================ -->
+  <section class="slide" id="s6">
+    <div class="slide-inner">
+      <span class="slide-num">06 / 07</span>
+      <p class="slide-label">Roadmap</p>
+      <h2 class="slide-h2">Roadmap</h2>
+      <div class="roadmap-grid">
+        <div class="rm-wave active">
+          <div class="rm-k">Wave 1 · Prove</div>
+          <p class="rm-dates">Aug 27 – Sep 16</p>
+          <ul class="rm-list">
+            <li class="done">Concept, personas, competitive landscape</li>
+            <li class="done">Local dev stack operational</li>
+            <li class="active">Compact contract + end-to-end proof flow</li>
+            <li class="active">Demo frontend + video</li>
+          </ul>
+        </div>
+        <div class="rm-wave">
+          <div class="rm-k">Wave 2 · Trust</div>
+          <p class="rm-dates">Sep – Oct</p>
+          <ul class="rm-list">
+            <li>First issuer / trust-registry model</li>
+            <li>Credential issuance</li>
+            <li>Automated testing</li>
+          </ul>
+        </div>
+        <div class="rm-wave">
+          <div class="rm-k">Wave 3 · Expand</div>
+          <p class="rm-dates">Oct – Nov</p>
+          <ul class="rm-list">
+            <li>Multiple credential types</li>
+            <li>Verification policies</li>
+            <li>Broader demo surface</li>
+          </ul>
+        </div>
+        <div class="rm-wave">
+          <div class="rm-k">Beyond · Infrastructure</div>
+          <p class="rm-dates">Future</p>
+          <ul class="rm-list">
+            <li>Portable verification across websites and social feeds</li>
+            <li>Browser integrations, APIs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SLIDE 7 — EQUIPA ============================ -->
+  <section class="slide slide-team" id="s7">
+    <div class="slide-inner">
+      <span class="slide-num">07 / 07</span>
+      <p class="slide-label">Team</p>
+      <h2 class="slide-h2">Team</h2>
+      <div class="team-card">
+        <div class="team-avatar"></div>
+        <div class="team-info">
+          <h3>Rafaela Costa</h3>
+          <p class="team-role">Strategic UX/UI designer & product builder</p>
+        </div>
+      </div>
+      <p class="slide-callout team-note">Compact implementation developed with AI-assisted tooling (Midnight Expert, Claude Code) and community guidance via Midnight Discord.</p>
+      <p class="slide-foot-center">Built for the Midnight Buildathon — Wave 1.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ DECK CONTROLS ============================ -->
+<div class="deck-controls" id="deckControls">
+  <button class="deck-btn" id="prevBtn" aria-label="Previous slide">←</button>
+  <span class="deck-counter" id="counter">1 / 7</span>
+  <button class="deck-btn" id="nextBtn" aria-label="Next slide">→</button>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>
+      Built solo by <strong>Rafaela Costa</strong> — Strategic UX/UI designer & product builder.<br>
+      Compact implementation with AI-assisted tooling, guided by the Midnight community.
+    </div>
+    <div class="meta">
+      <a href="index.html">Back to overview</a> · <a href="progress.html">Build log</a><br>
+      Apache License 2.0 · Midnight Buildathon 2026
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.slide');
+  var total = slides.length;
+  var current = 0;
+  var counter = document.getElementById('counter');
+  var prevBtn = document.getElementById('prevBtn');
+  var nextBtn = document.getElementById('nextBtn');
+
+  function show(i){
+    current = Math.max(0, Math.min(total - 1, i));
+    slides.forEach(function(s, idx){
+      s.classList.toggle('active', idx === current);
+    });
+    counter.textContent = (current + 1) + ' / ' + total;
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  prevBtn.addEventListener('click', function(){ show(current - 1); });
+  nextBtn.addEventListener('click', function(){ show(current + 1); });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown'){ e.preventDefault(); show(current + 1); }
+    if(e.key === 'ArrowLeft' || e.key === 'PageUp'){ e.preventDefault(); show(current - 1); }
+    if(e.key === 'Home'){ show(0); }
+    if(e.key === 'End'){ show(total - 1); }
+  });
+
+  // hash navigation
+  if(window.location.hash){
+    var id = window.location.hash.substring(1);
+    for(var i = 0; i < slides.length; i++){
+      if(slides[i].id === id){ show(i); return; }
+    }
+  }
+  show(0);
+})();
+</script>
+
+</body>
+</html>

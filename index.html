@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vero — Credibility you can prove</title>
+<meta name="description" content="Vero is a verifiable credibility layer for people and organisations publishing online, built on Midnight. Prove a relevant credential or accountability claim — and choose what you reveal.">
+<meta name="theme-color" content="#05060A">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/logo.svg" alt="Vero">
+    </a>
+    <ul class="links">
+      <li><a href="#problem">Problem</a></li>
+      <li><a href="#mechanism">Mechanism</a></li>
+      <li><a href="#scope">Scope</a></li>
+      <li><a href="#sources">Sources</a></li>
+      <li><a href="#landscape">Landscape</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="progress.html">Progress</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero" id="top">
+    <div class="wrap grid">
+      <div>
+        <p class="kicker"><span class="pip"></span> Verifiable credibility · Midnight Buildathon</p>
+        <h1>Credibility<br>you can <em>prove.</em></h1>
+        <p class="lede">Vero is a verifiable credibility layer for people and organisations publishing online. Prove a relevant credential or accountability claim — and choose what you reveal.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="progress.html">Follow the build</a>
+          <a class="btn ghost" href="#mechanism">See the mechanism</a>
+        </div>
+      </div>
+
+      <div class="specimen">
+        <img class="specimen-art" src="assets/credibility-field.svg?v=3" alt="">
+        <div class="spec-ticks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="spec-head">
+          <span>fig. 01 — disclosure path</span>
+          <span class="idx">ZK / SELECTIVE</span>
+        </div>
+
+        <div class="card cred">
+          <span class="card-tag">witness · private</span>
+          <div class="row"><span>issuer</span><span class="redact w1"></span></div>
+          <div class="row"><span>holder</span><span class="redact w2"></span></div>
+          <div class="row"><span>credential_id</span><span class="redact w3"></span></div>
+          <div class="row"><span>expires_at</span><span class="redact w2"></span></div>
+          <div class="row"><span>type</span><span class="visible-field">accredited_journalist</span></div>
+        </div>
+
+        <div class="flow">
+          <span class="node">zk</span>
+          <span class="rail"></span>
+          <span>compact circuit · verified off-chain</span>
+        </div>
+
+        <div class="card post">
+          <span class="card-tag">ledger · public</span>
+          <div class="avatar"></div>
+          <div>
+            <div class="claim">A source, verified.</div>
+            <div class="seal"><span class="tick">✓</span> Vero verified</div>
+          </div>
+        </div>
+
+        <p class="spec-foot">The source chooses what to reveal. <b>Identity can stay private</b> — only the credential-backed fact becomes public.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PROBLEM ============================ -->
+  <section id="problem">
+    <div class="wrap">
+      <span class="coord">§ 01 · PROBLEM</span>
+      <p class="section-label"><span class="n">01</span> — the problem</p>
+      <h2>Publishing is easy.<br>Credibility is harder to <em>prove.</em></h2>
+      <p class="lede-2">Anyone can publish. Not every source can prove what qualifies them to speak with authority.</p>
+
+      <div class="clippings">
+        <div class="clip">
+          <span class="flag">platform badges</span>
+          <q>Prove platform approval.</q>
+          <p class="note">A checkmark tells you that a platform approved an account. It doesn't prove professional credentials or expertise.</p>
+        </div>
+        <div class="clip">
+          <span class="flag">content provenance</span>
+          <q>Prove where content came from.</q>
+          <p class="note">Provenance systems can show how content was created or changed. They don't necessarily prove the credentials of the source behind it.</p>
+        </div>
+        <div class="clip">
+          <span class="flag">professional credentials</span>
+          <q>Prove qualifications.</q>
+          <p class="note">Professional credentials already exist — but they are rarely portable, cryptographically verifiable trust signals on the open web.</p>
+        </div>
+      </div>
+
+      <p class="section-conclusion">Vero connects these worlds by turning credentials into verifiable trust signals.</p>
+    </div>
+  </section>
+
+  <!-- ============================ MECHANISM ============================ -->
+  <section id="mechanism">
+    <div class="wrap">
+      <span class="coord">§ 02 · MECHANISM</span>
+      <p class="section-label"><span class="n">02</span> — mechanism</p>
+      <h2>Verifiable credibility,<br>by <em>design.</em></h2>
+      <p class="lede-2">Vero turns existing credentials into cryptographic proofs. The source decides how much of the underlying information to reveal.</p>
+
+      <div class="mech">
+        <div class="mech-step">
+          <div class="k"><span class="num">01</span> source</div>
+          <h3>Holds a credential</h3>
+          <p>A professional licence, organisational credential, or accountability claim — issued by a recognised body. It stays on the source's side.</p>
+        </div>
+        <div class="mech-step">
+          <div class="k"><span class="num">02</span> circuit</div>
+          <h3>Compact circuit</h3>
+          <p>Checks validity, expiry, issuer and scope off-chain. The credential itself is never submitted.</p>
+        </div>
+        <div class="mech-step">
+          <div class="k"><span class="num">03</span> disclose()</div>
+          <h3>Choose what to reveal</h3>
+          <p>The source discloses only what it chooses. Identity can be public, associated with an organisation, or private.</p>
+        </div>
+        <div class="mech-step">
+          <div class="k"><span class="num">04</span> render</div>
+          <h3>Reader sees it</h3>
+          <p>The frontend reads the ledger and shows the verified signal next to the source or post.</p>
+        </div>
+      </div>
+
+      <div class="disclosure-choice">
+        <div class="dc-col">
+          <span class="dc-label">identity public</span>
+          <span class="dc-arrow">→</span>
+          <span class="dc-result"><span class="tick">✓</span> verified</span>
+        </div>
+        <div class="dc-col">
+          <span class="dc-label">identity private / pseudonymous</span>
+          <span class="dc-arrow">→</span>
+          <span class="dc-result"><span class="tick">✓</span> verified</span>
+        </div>
+      </div>
+
+      <p class="section-conclusion">Identity and credibility don't have to be the same thing.</p>
+    </div>
+  </section>
+
+  <!-- ============================ SCOPE ============================ -->
+  <section id="scope">
+    <div class="wrap">
+      <span class="coord">§ 03 · SCOPE</span>
+      <p class="section-label"><span class="n">03</span> — scope</p>
+      <h2>What Vero verifies —<br>and what it <em>doesn't.</em></h2>
+
+      <div class="scope">
+        <div class="scope-col in">
+          <h3>Verifies</h3>
+          <ul>
+            <li><span class="mark yes">✓</span> <b>Valid professional credentials</b> — accredited journalist, licensed doctor, registered accountant, licensed engineer, other recognised professionals</li>
+            <li><span class="mark yes">✓</span> <b>Recognised organisations</b> — news outlets, research organisations, companies, crypto/Web3 organisations</li>
+            <li><span class="mark yes">✓</span> <b>Credential validity</b> — valid credential, recognised issuer, scope, expiry, other policy conditions</li>
+            <li><span class="mark yes">✓</span> <b>Accountability claims</b> — an organisation can prove it is a recognised entity willing to stand behind what it publishes</li>
+          </ul>
+        </div>
+        <div class="scope-col out">
+          <h3>Doesn't verify yet</h3>
+          <ul>
+            <li><span class="mark no">×</span> Whether a specific claim is true</li>
+            <li><span class="mark no">×</span> Whether an opinion is correct</li>
+            <li><span class="mark no">×</span> Whether content is scientifically accurate</li>
+            <li><span class="mark no">×</span> Whether a publisher is politically or editorially trustworthy</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="scope-closing">Vero verifies the <em>source.</em> It doesn't decide what you should believe.</p>
+    </div>
+  </section>
+
+  <!-- ============================ SOURCE TYPES ============================ -->
+  <section id="sources">
+    <div class="wrap">
+      <span class="coord">§ 04 · SOURCES</span>
+      <p class="section-label"><span class="n">04</span> — source types</p>
+      <h2>Credibility isn't<br>one-size-fits-all.</h2>
+
+      <div class="source-types">
+        <div class="source-card">
+          <span class="source-tab">professionals</span>
+          <ul class="source-list">
+            <li>Journalists</li>
+            <li>Doctors</li>
+            <li>Accountants</li>
+            <li>Engineers</li>
+            <li>Researchers</li>
+            <li class="muted">Other credentialed professionals</li>
+          </ul>
+        </div>
+        <div class="source-card">
+          <span class="source-tab">organisations</span>
+          <ul class="source-list">
+            <li>News outlets</li>
+            <li>Research organisations</li>
+            <li>Companies</li>
+            <li>NGOs</li>
+            <li>Crypto / Web3 organisations</li>
+          </ul>
+        </div>
+        <div class="source-card">
+          <span class="source-tab">pseudonymous</span>
+          <p class="source-desc">A source can prove relevant credentials without necessarily revealing a legal identity.</p>
+          <div class="pseudo-example">
+            <span class="pseudo-handle">@anon_eth</span>
+            <span class="seal small"><span class="tick">✓</span> Vero verified</span>
+            <span class="pseudo-meta">credential verified · identity: pseudonymous</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ LANDSCAPE ============================ -->
+  <section id="landscape">
+    <div class="wrap">
+      <span class="coord">§ 05 · LANDSCAPE</span>
+      <p class="section-label"><span class="n">05</span> — competitive landscape</p>
+      <h2>Different trust problems<br>need different <em>proofs.</em></h2>
+
+      <div class="table-wrap">
+        <div class="ruler"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Approach</th>
+              <th scope="col">What it proves</th>
+              <th scope="col">Main limitation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Platform verification</th>
+              <td>Platform approval of an account</td>
+              <td>Controlled by the platform</td>
+            </tr>
+            <tr>
+              <th scope="row">Community Notes</th>
+              <td>Community consensus about a claim</td>
+              <td>Slow and platform-dependent</td>
+            </tr>
+            <tr>
+              <th scope="row">Fact-checking</th>
+              <td>Editorial judgement about a claim</td>
+              <td>Requires an intermediary</td>
+            </tr>
+            <tr>
+              <th scope="row">C2PA / Content Credentials</th>
+              <td>Content provenance and history</td>
+              <td>Doesn't primarily establish source credentials</td>
+            </tr>
+            <tr>
+              <th scope="row">Professional credentials</th>
+              <td>A person's or organisation's qualification</td>
+              <td>Usually not portable/verifiable where content is published</td>
+            </tr>
+            <tr class="us">
+              <th scope="row">Vero</th>
+              <td>Verifiable credentials / accountability of the source</td>
+              <td>Early-stage ecosystem and issuer registry</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="c2pa-distinction">
+        <div class="c2pa-col">
+          <span class="c2pa-label">C2PA helps answer</span>
+          <p>"What happened to this content?"</p>
+        </div>
+        <div class="c2pa-col">
+          <span class="c2pa-label">Vero helps answer</span>
+          <p>"What can this source prove about itself?"</p>
+        </div>
+      </div>
+
+      <p class="section-conclusion">Vero doesn't replace fact-checking, Community Notes or content provenance. It addresses a different, upstream problem: giving sources a portable way to prove what they are qualified or authorised to claim.</p>
+    </div>
+  </section>
+
+  <!-- ============================ PERSONAS ============================ -->
+  <section id="personas">
+    <div class="wrap">
+      <span class="coord">§ 06 · PERSONAS</span>
+      <p class="section-label"><span class="n">06</span> — who it's for</p>
+      <h2>Three sides of the<br>trust <em>problem.</em></h2>
+
+      <div class="personas">
+        <div class="persona">
+          <span class="tab">reader</span>
+          <h3>Can I trust this source?</h3>
+          <p class="jtbd">Readers need a simple signal that tells them what a source can actually prove about itself.</p>
+        </div>
+        <div class="persona">
+          <span class="tab">professional</span>
+          <h3>Can I prove my credibility?</h3>
+          <p class="jtbd">Professionals should be able to demonstrate relevant credentials without being forced to expose information they don't want to share.</p>
+        </div>
+        <div class="persona">
+          <span class="tab">organisation</span>
+          <h3>Can we stand behind what we publish?</h3>
+          <p class="jtbd">Organisations should be able to establish accountability and credibility around the content they publish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WEB3 CALLOUT ============================ -->
+  <section id="web3">
+    <div class="wrap">
+      <span class="coord">§ 07 · WEB3</span>
+      <p class="section-label"><span class="n">07</span> — crypto / web3 use case</p>
+      <h2>Credibility matters most<br>when identity is <em>complicated.</em></h2>
+      <p class="lede-2">Crypto and Web3 already operate with pseudonyms, DAOs, collectives and globally distributed organisations. Vero can separate a source's credibility from the requirement to expose a legal identity.</p>
+
+      <div class="web3-example">
+        <div class="web3-card">
+          <span class="web3-handle">@protocol_research</span>
+          <div class="seal"><span class="tick">✓</span> Vero verified</div>
+          <span class="web3-meta">credential / organisation verified · identity: pseudonymous</span>
+        </div>
+        <p class="web3-note">A particularly strong early use case — accountability and pseudonymity often coexist in Web3.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ROADMAP ============================ -->
+  <section id="roadmap">
+    <div class="wrap">
+      <span class="coord">§ 08 · ROADMAP</span>
+      <p class="section-label"><span class="n">08</span> — roadmap</p>
+      <h2>Four waves, one <em>foundation.</em></h2>
+
+      <div class="timeline">
+        <div class="wave active">
+          <div class="k">wave 01 · now</div>
+          <h3>Prove</h3>
+          <p>Credential → ZK proof → Verified. Prove the core mechanism end-to-end.</p>
+        </div>
+        <div class="wave">
+          <div class="k">wave 02</div>
+          <h3>Trust</h3>
+          <p>Issuers → Policies → Credential issuance. Define how trusted credentials enter the ecosystem, starting with a small manually maintained allowlist.</p>
+        </div>
+        <div class="wave">
+          <div class="k">wave 03</div>
+          <h3>Expand</h3>
+          <p>Professionals → Organisations → Pseudonymous sources. Multiple credential types and verification policies.</p>
+        </div>
+        <div class="wave">
+          <div class="k">beyond</div>
+          <h3>Infrastructure</h3>
+          <p>Web → Social → Crypto → APIs. Browser overlay, platform integrations, verification API, broader credential ecosystem.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ STATUS ============================ -->
+  <section id="status">
+    <div class="wrap">
+      <span class="coord">§ 09 · STATUS</span>
+      <p class="section-label"><span class="n">09</span> — current status</p>
+      <h2>Where Wave 1 <em>stands.</em></h2>
+
+      <div class="status-groups">
+        <div class="status-group">
+          <h3 class="status-group-label done">Done</h3>
+          <ul class="checklist">
+            <li class="done"><span class="box">✓</span> Product concept, mechanism and naming finalized</li>
+            <li class="done"><span class="box">✓</span> Competitive landscape, personas and risk notes documented</li>
+          </ul>
+        </div>
+        <div class="status-group">
+          <h3 class="status-group-label now">Now</h3>
+          <ul class="checklist">
+            <li class="active"><span class="box"></span> Minimal Compact contract — credential verification circuit</li>
+            <li class="active"><span class="box"></span> Local Midnight dev stack — node, indexer, proof server</li>
+            <li class="active"><span class="box"></span> End-to-end proof flow</li>
+          </ul>
+        </div>
+        <div class="status-group">
+          <h3 class="status-group-label next">Next</h3>
+          <ul class="checklist">
+            <li><span class="box"></span> Demo frontend connected end-to-end</li>
+            <li><span class="box"></span> Tests</li>
+            <li><span class="box"></span> Demo video</li>
+            <li><span class="box"></span> Wave 1 submission</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="progress-statement">Wave 1 is about proving the mechanism — not building the entire product.</p>
+      <p class="deadline">Wave 1 deadline · September 16, 2026</p>
+      <br>
+      <a class="inline-link" href="progress.html">Read the full build log →</a>
+    </div>
+  </section>
+
+  <!-- ============================ CLOSING ============================ -->
+  <section id="closing">
+    <div class="wrap">
+      <h2 class="closing-headline">A trust layer<br>for the <em>open web.</em></h2>
+      <p class="closing-copy">Vero starts with verifiable professional and organisational credentials — and a simple idea: sources should be able to prove what they are qualified to claim.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      Built solo by <strong>Rafaela Costa</strong> — Strategic UX/UI designer & product builder.<br>
+      Compact implementation with AI-assisted tooling, guided by the Midnight community.
+    </div>
+    <div class="meta">
+      <a href="slides.html">Slide deck</a> · <a href="https://github.com/rmarquesc/vero-demo">GitHub repository</a><br>
+      Apache License 2.0 · Midnight Buildathon 2026
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

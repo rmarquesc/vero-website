@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vero — Build log & status</title>
+<meta name="description" content="Where the Vero buildathon project stands right now, and what's been done so far. Updated as Wave 1 progresses.">
+<meta name="theme-color" content="#05060A">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/logo.svg" alt="Vero">
+    </a>
+    <ul class="links">
+      <li><a href="index.html#problem">Problem</a></li>
+      <li><a href="index.html#mechanism">Mechanism</a></li>
+      <li><a href="index.html#scope">Scope</a></li>
+      <li><a href="index.html#sources">Sources</a></li>
+      <li><a href="index.html#landscape">Landscape</a></li>
+      <li><a href="index.html#roadmap">Roadmap</a></li>
+      <li><a href="progress.html" aria-current="page">Progress</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================ STATUS ============================ -->
+  <section id="status" style="border-top:none;padding-top:80px;">
+    <div class="wrap">
+      <span class="coord">§ 00 · STATUS</span>
+      <p class="section-label"><span class="n">00</span> — progress</p>
+      <h2>Where Wave 1 stands.</h2>
+      <p class="page-intro">A live record of what's done, what's in motion, and what's next — so I can stay oriented, and anyone following the buildathon can see where Vero is at.</p>
+
+      <div class="stamp-row">
+        <span class="live">live</span>
+        <span class="sep"></span>
+        <span>last updated <time datetime="2026-09-05">05 Sep 2026</time></span>
+        <span class="sep"></span>
+        <span>wave <b>1 of 4</b></span>
+        <span class="sep"></span>
+        <span><b>3</b> of <b>7</b> milestones complete</span>
+      </div>
+
+      <div class="status-groups">
+        <div class="status-group">
+          <h3 class="status-group-label done">Done</h3>
+          <ul class="checklist">
+            <li class="done"><span class="box">✓</span> Product concept, mechanism and naming finalized</li>
+            <li class="done"><span class="box">✓</span> Competitive landscape, personas and risk notes documented</li>
+            <li class="done"><span class="box">✓</span> Local dev environment fully operational — Docker stack, wallet, and CLI tested</li>
+          </ul>
+        </div>
+        <div class="status-group">
+          <h3 class="status-group-label now">Now</h3>
+          <ul class="checklist">
+            <li class="active"><span class="box"></span> Minimal Compact contract — credential verification circuit</li>
+            <li class="active"><span class="box"></span> End-to-end proof flow</li>
+          </ul>
+        </div>
+        <div class="status-group">
+          <h3 class="status-group-label next">Next</h3>
+          <ul class="checklist">
+            <li><span class="box"></span> Demo frontend connected end-to-end</li>
+            <li><span class="box"></span> Tests</li>
+            <li><span class="box"></span> Demo video</li>
+            <li><span class="box"></span> Wave 1 submission</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="progress-statement">Wave 1 is about proving the mechanism — not building the entire product.</p>
+      <p class="deadline">Wave 1 deadline · September 16, 2026</p>
+    </div>
+  </section>
+
+  <!-- ============================ BUILD LOG ============================ -->
+  <section id="log">
+    <div class="wrap">
+      <span class="coord">§ 01 · LOG</span>
+      <p class="section-label"><span class="n">01</span> — build log</p>
+      <h2>What's been happening.</h2>
+      <p class="lede-2">Newest first. Each entry is one step forward — finished, in progress, or blocked.</p>
+
+      <div class="log">
+
+        <!-- ==========================================================
+             NEW ENTRIES GO HERE, AT THE TOP.
+             Copy this template, paste it above, and fill it in:
+
+             <article class="log-entry">
+               <div class="log-meta">
+                 <time datetime="YYYY-MM-DD">DD Mon YYYY</time>
+                 <span class="log-status done">done</span>
+               </div>
+               <div class="log-body">
+                 <h3>Short title</h3>
+                 <p>One to three lines describing what happened.</p>
+                 <a class="link" href="URL">optional link →</a>
+               </div>
+             </article>
+
+             status classes:  done  |  in-progress  |  blocked
+             Remember to bump the "last updated" date above.
+             ========================================================== -->
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <time datetime="2026-09-05">05 Sep 2026</time>
+            <span class="log-status done">done</span>
+          </div>
+          <div class="log-body">
+            <h3>Local dev environment fully operational — Docker stack, wallet, and CLI tested</h3>
+            <p>The local Midnight dev stack (node + indexer + proof server) is running successfully via Docker. A wallet has been created with test tokens (tNight and DUST), the Compact contract has been deployed, and the CLI has been tested end-to-end: credential verification, status reading, and balance checking all work correctly. This unblocks Wave 1 development — the mechanism can now be built and tested locally.</p>
+          </div>
+        </article>
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <time datetime="2026-09-01">01 Sep 2026</time>
+            <span class="log-status in-progress">in progress</span>
+          </div>
+          <div class="log-body">
+            <h3>Minimal Compact contract — compiling</h3>
+            <p>The credential-verification circuit is being written in Compact. Currently working through the validity checks (issuer allowlist, expiry, scope) and getting the contract to compile cleanly against the local Midnight dev stack.</p>
+          </div>
+        </article>
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <time datetime="2026-09-01">01 Sep 2026</time>
+            <span class="log-status done">done</span>
+          </div>
+          <div class="log-body">
+            <h3>Product concept and positioning refined</h3>
+            <p>Vero is now positioned as a verifiable credibility layer — not just identity verification. The core distinction: credibility is the product value, privacy/selective disclosure is a capability. Identity is optional: a source can be fully identified, associated with an organisation, or pseudonymous. The architecture — source → Compact circuit → selective disclosure → frontend — is settled, and the name "Vero" is chosen.</p>
+          </div>
+        </article>
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <time datetime="2026-09-01">01 Sep 2026</time>
+            <span class="log-status done">done</span>
+          </div>
+          <div class="log-body">
+            <h3>Competitive landscape, personas and risk notes documented</h3>
+            <p>Comparison against platform verification, Community Notes, fact-checking, C2PA/Content Credentials, and professional credentials; three personas (reader, credentialed professional, organisation); and risk notes captured in the repo README. This is the foundation the rest of Wave 1 builds on.</p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      Built solo by <strong>Rafaela Costa</strong> — Strategic UX/UI designer & product builder.<br>
+      Compact implementation with AI-assisted tooling, guided by the Midnight community.
+    </div>
+    <div class="meta">
+      <a href="index.html">Back to overview</a> · <a href="slides.html">Slide deck</a> · <a href="https://github.com/rmarquesc/vero-demo">GitHub repository</a><br>
+      Apache License 2.0 · Midnight Buildathon 2026
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
