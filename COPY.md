@@ -436,7 +436,7 @@ Last updated: 06 Sep 2026 (post-registry)
 - **Photo:** assets/rafaela.png
 - **Name:** Rafaela Costa
 - **Role:** Strategic UX/UI designer & product builder
-- **Seal:** ✓ Vero verified — *the one credential in the demo registry, granted by the demo registrar, who is also her*
+- **Seal (top-right corner of the card, Vero mark instead of a tick):** Vero verified — *the one credential in the demo registry, granted by the demo registrar, who is also her*
 - **Callout:** Vero is a trust-signal design problem as much as a cryptography one — what a reader can understand at a glance decides whether any of the proof underneath matters. That is why it is built design-first.
 - **Note:** Compact implementation written with AI-assisted tooling (Midnight Expert, Claude Code) and guidance from the Midnight Discord — which is what let a design-led author work at the contract level rather than around it.
 - **Footer (bottom-left):** Built for the Midnight Buildathon — Wave 1.

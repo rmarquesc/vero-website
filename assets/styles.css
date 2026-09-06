@@ -1272,7 +1272,16 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
   font-size:1rem;color:var(--text-dim);margin:0;line-height:1.6;
 }
 .team-note{margin-bottom:24px;}
-.team-seal{margin-top:14px;}
+/* The seal sits in the corner of the card, as a stamp on a document does,
+   rather than trailing the role line. Absolute against the card, so it holds
+   the corner whatever the copy does. */
+.team-card{position:relative;}
+.team-seal{position:absolute;top:16px;right:16px;margin:0;}
+.seal-mark{width:15px;height:15px;display:block;flex:none;}
+@media (max-width:780px){
+  /* No corner to spare once the card tightens — back into the flow. */
+  .team-seal{position:static;margin-top:14px;}
+}
 .team-seal-note{
   font-family:var(--mono);font-size:0.68rem;line-height:1.6;
   color:var(--text-faint);margin:9px 0 0;max-width:46ch;
