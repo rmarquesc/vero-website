@@ -424,7 +424,8 @@ Last updated: 06 Sep 2026 (post-registry)
 - **Label:** Adoption
 - **Headline:** Two problems, not one.
 - **A — Who displays it:** Web3-native publishing first (Mirror, Farcaster, Lens), then individual publications, then platforms.
-- **B — Who issues it:** journalists' associations, medical councils, professional orders — publishing a judgement they already make.
+- **B — Who issues it:** the same world as A first — protocols, foundations and programmes (Midnight, Solana, SheFi) already decide who finished a cohort and who contributes; that is participation rather than licence, a different claim and a different issuer type. Professional bodies follow: journalists' associations, medical councils, orders.
+- **Why that order:** ecosystem issuers and Web3-native publishing are the same population, so the first credential and the first place to show it arrive together instead of waiting for each other.
 - **Why before the ecosystem exists:** a source who cannot safely use their own name wants this regardless; generated content made "a credentialed human stands behind this" a signal no checkmark can give.
 - **Callout:** One registrar *per issuer* — whoever grants a credential is the only one who can say whether it still holds. The contract has worked that way since Wave 1.
 
@@ -435,9 +436,10 @@ Last updated: 06 Sep 2026 (post-registry)
 - **Photo:** assets/rafaela.png
 - **Name:** Rafaela Costa
 - **Role:** Strategic UX/UI designer & product builder
+- **Seal:** ✓ Vero verified — *the one credential in the demo registry, granted by the demo registrar, who is also her*
 - **Callout:** Vero is a trust-signal design problem as much as a cryptography one — what a reader can understand at a glance decides whether any of the proof underneath matters. That is why it is built design-first.
 - **Note:** Compact implementation written with AI-assisted tooling (Midnight Expert, Claude Code) and guidance from the Midnight Discord — which is what let a design-led author work at the contract level rather than around it.
-- **Footer:** Built for the Midnight Buildathon — Wave 1.
+- **Footer (bottom-left):** Built for the Midnight Buildathon — Wave 1.
 
 ### Footer (hidden in deck view)
 

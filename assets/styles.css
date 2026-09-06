@@ -1272,6 +1272,23 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
   font-size:1rem;color:var(--text-dim);margin:0;line-height:1.6;
 }
 .team-note{margin-bottom:24px;}
+.team-seal{margin-top:14px;}
+.team-seal-note{
+  font-family:var(--mono);font-size:0.68rem;line-height:1.6;
+  color:var(--text-faint);margin:9px 0 0;max-width:46ch;
+}
+
+/* Slide 8 only: the credit sits on the baseline of the slide rather than
+   trailing the copy. Stretching lets the inner column fill the height, and
+   margin-top:auto pushes the credit down. Every other slide stays centred. */
+.slide-foot-left{
+  text-align:left;font-family:var(--mono);font-size:0.78rem;
+  letter-spacing:0.1em;text-transform:uppercase;color:var(--text-faint);
+  margin:48px 0 0;
+}
+.slide.slide-team{align-items:stretch;}
+.slide-team .slide-inner{display:flex;flex-direction:column;}
+.slide-team .slide-foot-left{margin-top:auto;padding-top:32px;}
 
 /* deck controls */
 .deck-controls{
