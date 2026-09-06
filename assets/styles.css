@@ -1274,7 +1274,10 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
 
 /* deck controls */
 .deck-controls{
-  position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  /* Bottom-right rather than centred: centred, the controls sit on top of the
+     content column and cover whatever the slide ends with. Here they fall in
+     the right margin on any screen wide enough to have one. */
+  position:fixed;bottom:24px;right:24px;
   z-index:50;
   display:flex;align-items:center;gap:16px;
   padding:10px 18px;
@@ -1301,7 +1304,11 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
 
 /* slide responsive */
 @media (max-width:720px){
-  .slide-inner{padding:0 22px;}
+  .deck-controls{bottom:14px;right:14px;padding:7px 12px;gap:10px;}
+  .deck-btn{width:30px;height:30px;font-size:.95rem;}
+  .deck-counter{min-width:48px;font-size:.72rem;}
+  /* room for the controls so the last line of a slide is never under them */
+  .slide-inner{padding:0 22px 64px;}
   .slide{padding:30px 0;}
   .slide-h2{font-size:clamp(1.6rem,7vw,2.4rem);}
   .slide-list li{font-size:1rem;}
