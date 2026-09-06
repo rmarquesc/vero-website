@@ -393,6 +393,7 @@ Last updated: 06 Sep 2026 (post-registry)
 
 - **Label:** Team
 - **Headline:** Team
+- **Photo:** assets/rafaela.png
 - **Name:** Rafaela Costa
 - **Role:** Strategic UX/UI designer & product builder
 - **Note:** Compact implementation developed with AI-assisted tooling (Midnight Expert, Claude Code) and community guidance via Midnight Discord.

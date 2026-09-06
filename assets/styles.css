@@ -1263,9 +1263,8 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
 .team-avatar{
   width:72px;height:72px;flex:none;
   border:1px solid rgba(255,255,255,.16);
-  background-image:repeating-linear-gradient(
-    -45deg, rgba(255,255,255,0.09) 0 1px, transparent 1px 5px
-  );
+  object-fit:cover;
+  display:block;
 }
 .team-info h3{font-size:1.6rem;margin:0 0 8px;}
 .team-role{
