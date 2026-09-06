@@ -390,12 +390,14 @@ Last updated: 06 Sep 2026 (post-registry)
 - ✓ Concept, personas, competitive landscape
 - ✓ Local dev stack operational
 - ✓ Compact contract + end-to-end proof flow
-- ✓ Merkle issuer registry + expiry enforcement
-- → Demo frontend + video
+- ✓ Merkle registry — one registrar per issuer type, expiry enforced
+- ✓ Reader view — badge from live ledger state
+- ✓ Contract test suite — 30 tests, no devnet needed
+- → Demo video
 
 **Wave 2 · Trust (Sep – Oct):**
 - Wallet bridge — prove from the browser (DApp Connector ↔ midnight-js)
-- Multiple registrars and issuer governance
+- Governance beyond a single key — multisig or on-chain vote
 - Credential revocation and public-network deployment
 
 **Wave 3 · Expand (Oct – Nov):**
@@ -414,7 +416,7 @@ Last updated: 06 Sep 2026 (post-registry)
 - **A — Who displays it:** Web3-native publishing first (Mirror, Farcaster, Lens), then individual publications, then platforms.
 - **B — Who issues it:** journalists' associations, medical councils, professional orders — publishing a judgement they already make.
 - **Why before the ecosystem exists:** a source who cannot safely use their own name wants this regardless; generated content made "a credentialed human stands behind this" a signal no checkmark can give.
-- **Callout:** The destination is one registrar *per issuer* — whoever grants a credential is the only one who can say whether it still holds.
+- **Callout:** One registrar *per issuer* — whoever grants a credential is the only one who can say whether it still holds. The contract has worked that way since Wave 1.
 
 ### Slide 8 — Team
 
