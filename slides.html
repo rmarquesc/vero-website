@@ -108,19 +108,11 @@
       <span class="slide-num">05 / 07</span>
       <p class="slide-label">Demo</p>
       <h2 class="slide-h2">Verified badge, <em>on-chain.</em></h2>
-      <div class="demo-frame">
-        <pre class="demo-terminal"><span class="t-dim">$ npm run cli</span>
-  Credential: journalist:accredited — valid until 2027-10-01 UTC
-
-<span class="t-dim">&gt; Verify a post</span>   <span class="t-in">https://example.com/article</span>
-  Post hash: cb9c24cd…
-  <span class="t-ok">✓ Post verified — proof accepted</span>
-    tx 005e1bd3…   block 5995
-
-<span class="t-dim">&gt; Check a post</span>    <span class="t-in">https://example.com/article</span>
-  Verified:       <span class="t-ok">YES — journalist:accredited</span>
-  Posts on-chain: 1</pre>
-      </div>
+      <figure class="demo-shot">
+        <img src="assets/demo-reader-view.png"
+             alt="Three posts in a feed. Two carry no verification; the third shows a cyan Vero verified badge reading journalist:accredited.">
+        <figcaption>The reader view, reading live ledger state. No wallet, no account, nothing installed.</figcaption>
+      </figure>
       <ul class="slide-list demo-meta">
         <li>Registry membership proven — <b>without revealing which credential</b>. Expiry enforced on-chain.</li>
         <li>Local Midnight devnet · block <code>5995</code></li>

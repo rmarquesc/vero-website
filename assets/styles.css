@@ -1338,3 +1338,19 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
 @media (max-width:720px){
   .demo-terminal{font-size:0.7rem;padding:18px 16px;}
 }
+
+/* Slide 5 — the reader view itself, rather than a description of it. */
+.demo-shot { margin: 0 0 20px; }
+.demo-shot img {
+  width: 100%;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.demo-shot figcaption {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  margin-top: 10px;
+}
+@media (max-width: 720px) { .demo-shot figcaption { font-size: 0.64rem; } }

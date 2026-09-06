@@ -357,7 +357,8 @@ Last updated: 06 Sep 2026 (post-registry)
 
 - **Label:** Demo
 - **Headline:** Verified badge, on-chain.
-- **Terminal transcript:** live CLI run — verify a post, then read it back
+- **Screenshot:** the reader view rendering live ledger state — one post unverified, one carrying the Vero verified badge
+- **Caption:** The reader view, reading live ledger state. No wallet, no account, nothing installed.
 - **Meta:**
   - Registry membership proven — without revealing which credential. Expiry enforced on-chain.
   - Local Midnight devnet · block 5995
