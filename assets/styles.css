@@ -1111,6 +1111,16 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:transparent;
 }
+/* The cover carries the mark itself rather than the word set in the deck's
+   face — the checked O is the whole point of the identity, and typing "Vero"
+   throws it away. The gradient fill is reset because it only ever applied to
+   text. */
+.slide-title.is-logo{
+  background:none;-webkit-text-fill-color:initial;color:inherit;
+  line-height:1;margin:0 0 26px;
+}
+.cover-logo{display:block;width:clamp(240px,36vw,420px);height:auto;}
+
 .slide-subtitle{
   font-size:clamp(1.5rem,3.5vw,2.4rem);
   font-family:var(--sans);font-weight:400;letter-spacing:-.035em;
@@ -1262,7 +1272,7 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
   border-top:1px solid rgba(255,255,255,.14);
 }
 .team-avatar{
-  width:72px;height:72px;flex:none;
+  width:88px;height:88px;flex:none;
   border:1px solid rgba(255,255,255,.16);
   object-fit:cover;
   display:block;
@@ -1342,7 +1352,7 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
   .slide-callout{font-size:1.1rem;}
   .step{padding:18px 20px;}
   .team-card{padding:24px 22px;gap:18px;}
-  .team-avatar{width:56px;height:56px;}
+  .team-avatar{width:64px;height:64px;}
   .team-info h3{font-size:1.3rem;}
 }
 

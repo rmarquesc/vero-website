@@ -21,7 +21,7 @@ Last updated: 06 Sep 2026 (post-registry)
 
 ### Meta
 
-- **Title:** Vero — Credibility you can prove
+- **Title:** the Vero logotype (assets/logo.svg), not the word set in type — Credibility you can prove
 - **Description:** Vero is a verifiable credibility layer for people and organisations publishing online, built on Midnight. Prove a relevant credential or accountability claim — and choose what you reveal.
 
 ### Hero
