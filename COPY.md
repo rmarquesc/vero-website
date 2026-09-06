@@ -169,7 +169,25 @@ Last updated: 06 Sep 2026 (post-registry)
 - **Example:** @protocol_research — Vero verified ✓ — credential / organisation verified · identity: pseudonymous
 - **Note:** A particularly strong early use case — accountability and pseudonymity often coexist in Web3.
 
-### § 08 — Roadmap
+### § 08 — Adoption
+
+- **Headline:** Two problems, not one.
+- **Lede:** A registry with no issuers is worthless, and issuers with nowhere to show the signal are too. Whoever displays a Vero badge and whoever issues the credential behind it are different parties, with different reasons to move.
+
+**Who displays it — Web3-native publishing, first:** Mirror, Farcaster, Lens and wallet-based social already assume a wallet, already understand proofs, and already publish under pseudonyms. Then individual publications and newsletters, where one editor can say yes. Then the platforms, which move last and only on evidence.
+
+**Who issues it — bodies that already credential:** journalists' associations, medical councils, engineering orders. Vero does not ask them to make a new judgement, only to publish one they already make. Slow to adopt, which is why they follow rather than lead — but they are the only entities that can make the signal mean anything.
+
+**Why anyone bothers before the ecosystem exists:**
+- *The source* — a credentialed journalist who cannot safely publish under their own name wants this with or without a platform. That is demand, not adoption strategy.
+- *The bot problem* — "a credentialed human stands behind this" is a signal no platform checkmark can give, and the need arrived recently and suddenly.
+- *Regulation ahead* — the Digital Services Act and AI Act push platforms towards provenance obligations. Built early is cheaper than retrofitted under a deadline.
+
+**Who operates the registry:** today, one registrar run by the project and labelled a demo. The destination is one registrar **per issuer** — whoever grants a credential is the only one who can say whether it still holds. That is why multiple registrars is the next contract work, not a later refinement.
+
+- **Conclusion:** Vero does not need an ecosystem to be useful to its first source. It needs one source who cannot publish under their own name, and one reader who wants to know whether to listen.
+
+### § 09 — Roadmap
 
 - **Headline:** Four waves, one foundation.
 
@@ -178,7 +196,7 @@ Last updated: 06 Sep 2026 (post-registry)
 3. **Wave 03 — Expand:** Professionals → Organisations → Pseudonymous sources. Multiple credential types and verification policies.
 4. **Beyond — Infrastructure:** Web → Social → Crypto → APIs. Browser overlay, platform integrations, verification API, broader credential ecosystem.
 
-### § 09 — Current Status
+### § 10 — Current Status
 
 - **Headline:** Where Wave 1 stands.
 
@@ -389,14 +407,24 @@ Last updated: 06 Sep 2026 (post-registry)
 - Portable verification across websites and social feeds
 - Browser integrations, APIs
 
-### Slide 7 — Team
+### Slide 7 — Adoption
+
+- **Label:** Adoption
+- **Headline:** Two problems, not one.
+- **A — Who displays it:** Web3-native publishing first (Mirror, Farcaster, Lens), then individual publications, then platforms.
+- **B — Who issues it:** journalists' associations, medical councils, professional orders — publishing a judgement they already make.
+- **Why before the ecosystem exists:** a source who cannot safely use their own name wants this regardless; generated content made "a credentialed human stands behind this" a signal no checkmark can give.
+- **Callout:** The destination is one registrar *per issuer* — whoever grants a credential is the only one who can say whether it still holds.
+
+### Slide 8 — Team
 
 - **Label:** Team
 - **Headline:** Team
 - **Photo:** assets/rafaela.png
 - **Name:** Rafaela Costa
 - **Role:** Strategic UX/UI designer & product builder
-- **Note:** Compact implementation developed with AI-assisted tooling (Midnight Expert, Claude Code) and community guidance via Midnight Discord.
+- **Callout:** Vero is a trust-signal design problem as much as a cryptography one — what a reader can understand at a glance decides whether any of the proof underneath matters. That is why it is built design-first.
+- **Note:** Compact implementation written with AI-assisted tooling (Midnight Expert, Claude Code) and guidance from the Midnight Discord — which is what let a design-led author work at the contract level rather than around it.
 - **Footer:** Built for the Midnight Buildathon — Wave 1.
 
 ### Footer (hidden in deck view)
