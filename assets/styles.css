@@ -664,6 +664,7 @@ footer .meta{text-align:right;}
 
 .log-body h3{font-size:1.14rem;margin:0 0 10px;}
 .log-body p{font-size:1rem;color:var(--text-dim);margin:0;max-width:64ch;}
+.log-body p + p{margin-top:13px;}
 .log-body .link{
   display:inline-block;margin-top:14px;font-family:var(--mono);
   font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;

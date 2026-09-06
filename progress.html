@@ -48,7 +48,7 @@
         <span class="sep"></span>
         <span>wave <b>1 of 4</b></span>
         <span class="sep"></span>
-        <span><b>7</b> of <b>9</b> milestones complete</span>
+        <span><b>9</b> of <b>11</b> milestones complete</span>
       </div>
 
       <div class="status-groups">
@@ -62,6 +62,8 @@
             <li class="done"><span class="box">✓</span> End-to-end proof flow on the local devnet</li>
             <li class="done"><span class="box">✓</span> Automated checks — end-to-end and proof-forgery regression</li>
             <li class="done"><span class="box">✓</span> Reader view — verified badge rendered from live ledger state</li>
+            <li class="done"><span class="box">✓</span> Contract tests that need no devnet — 30 of them, under a second</li>
+            <li class="done"><span class="box">✓</span> Multiple registrars — one per issuer type, appointed by governance</li>
           </ul>
         </div>
         <div class="status-group">
@@ -73,7 +75,6 @@
         <div class="status-group">
           <h3 class="status-group-label next">Next</h3>
           <ul class="checklist">
-            <li><span class="box"></span> Simulation tests that run without a devnet</li>
             <li><span class="box"></span> Wave 1 submission</li>
           </ul>
         </div>
@@ -113,6 +114,36 @@
              status classes:  done  |  in-progress  |  blocked
              Remember to bump the "last updated" date above.
              ========================================================== -->
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <time datetime="2026-09-06">06 Sep 2026</time>
+            <span class="log-status done">done</span>
+          </div>
+          <div class="log-body">
+            <h3>One registrar per issuer type — and why the subject stopped building its own credential</h3>
+            <p>The contract held a single registrar, so one authority granted every kind of credential. The adoption model does not work that way: the body that grants a credential is the only one that can say whether it still holds. A press council can accredit journalists and has no standing to certify surgeons.</p>
+            <p>There are now three roles. Governance appoints registrars, a registrar grants credentials of its own issuer type, and a holder proves. Each has its own domain-separated commitment, so no secret can be replayed as another role's authority.</p>
+            <p>The part that mattered was not the map but who builds the credential. Earlier versions took a finished commitment from the subject, which meant the registrar signed off on thirty-two opaque bytes — survivable with one trusted registrar, and not with several, because a subject could take a commitment built as "accredited journalist" to whichever registrar was easiest to convince. The subject now hands over only a commitment to a secret it never reveals, and the contract builds the credential from what the registrar states.</p>
+            <p>Binding the granting registrar into the credential has a consequence worth being deliberate about: replacing a registrar invalidates everything it granted. That is intended. Governance replaces a registrar precisely when it should no longer be trusted, and the alternative would silently transfer its credentials to the replacement. There is a test for it.</p>
+            <a class="link" href="https://github.com/rmarquesc/vero-demo/blob/main/contracts/vero.compact">Read the contract →</a>
+          </div>
+        </article>
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <time datetime="2026-09-06">06 Sep 2026</time>
+            <span class="log-status done">done</span>
+          </div>
+          <div class="log-body">
+            <h3>Thirty tests for the contract, and not one of them needs Docker</h3>
+            <p>The only tests needed a running devnet — proof server, node, indexer and a funded wallet. That is the right test for the wiring and the wrong one for the contract's logic, and it meant anyone cloning the repository and running the test command was told there were no tests.</p>
+            <p>The suite now drives the compiled circuits directly through the Compact runtime. Circuit execution is real, so every assertion in the contract fires exactly as it would on-chain; only the proving is skipped. It runs in under a second, and compiles the contract itself when needed, so a fresh clone needs nothing but Node and the Compact compiler.</p>
+            <p>There is one test per rejection the contract can make, because a credential system that verifies valid credentials and also verifies invalid ones is worse than no system at all: it looks like it works. A genuine Merkle path belonging to somebody else. A path built against a different registry. A credential proven under an issuer type it was never granted for.</p>
+            <p>Running in process also makes block time a settable value, which a live devnet cannot offer. That bought two tests the devnet could not: the expiry boundary, checked one second either side, and a regression for the millisecond trap — an expiry given in milliseconds is accepted twenty years after it should have lapsed, silently, and nothing in the contract can catch it.</p>
+            <a class="link" href="https://github.com/rmarquesc/vero-demo/blob/main/test/vero.test.ts">Read the tests →</a>
+          </div>
+        </article>
 
         <article class="log-entry">
           <div class="log-meta">

@@ -249,7 +249,7 @@ Last updated: 06 Sep 2026 (post-registry)
 - live
 - last updated 06 Sep 2026
 - wave 1 of 4
-- 7 of 9 milestones complete
+- 9 of 11 milestones complete
 
 **Done:**
 - ✓ Product concept, mechanism and naming finalized
@@ -258,12 +258,14 @@ Last updated: 06 Sep 2026 (post-registry)
 - ✓ Compact contract — Merkle issuer registry, expiry enforcement
 - ✓ End-to-end proof flow on the local devnet
 - ✓ Automated checks — end-to-end and proof-forgery regression
+- ✓ Reader view — verified badge rendered from live ledger state
+- ✓ Contract tests that need no devnet — 30 of them, under a second
+- ✓ Multiple registrars — one per issuer type, appointed by governance
 
 **Now:**
-- Demo frontend connected end-to-end
+- Demo video
 
 **Next:**
-- Demo video
 - Wave 1 submission
 
 - **Statement:** Wave 1 is about proving the mechanism — not building the entire product.
@@ -275,38 +277,46 @@ Last updated: 06 Sep 2026 (post-registry)
 - **Lede:** Newest first. Each entry is one step forward — finished, in progress, or blocked.
 
 **Entry 1 — 06 Sep 2026 · done**
+- **Title:** One registrar per issuer type — and why the subject stopped building its own credential
+- **Body:** The contract held a single registrar, so one authority granted every kind of credential. The adoption model does not work that way: the body that grants a credential is the only one that can say whether it still holds. There are now three roles — governance appoints registrars, a registrar grants credentials of its own issuer type, a holder proves — each with its own domain-separated commitment. The part that mattered was not the map but who builds the credential: earlier versions took a finished commitment from the subject, so a subject could take a commitment built as "accredited journalist" to whichever registrar was easiest to convince. The subject now hands over only a commitment to a secret it never reveals. Binding the granting registrar into the credential means replacing a registrar invalidates everything it granted — intended, since governance replaces a registrar precisely when it should no longer be trusted.
+
+**Entry 2 — 06 Sep 2026 · done**
+- **Title:** Thirty tests for the contract, and not one of them needs Docker
+- **Body:** The only tests needed a running devnet, which is the right test for the wiring and the wrong one for the contract's logic — and it meant a fresh clone running the test command was told there were no tests. The suite now drives the compiled circuits directly through the Compact runtime: circuit execution is real, only the proving is skipped, and it runs in under a second. There is one test per rejection the contract can make, because a credential system that also verifies invalid credentials is worse than none — it looks like it works. Running in process makes block time settable, which bought two tests a live devnet cannot: the expiry boundary one second either side, and a regression for the millisecond trap.
+
+**Entry 3 — 06 Sep 2026 · done**
 - **Title:** A reader can now see the signal — and the wallet bridge is scoped for Wave 2
 - **Body:** The demo had been a command line; there is now a frontend. The reader view queries the indexer, decodes the ledger with the contract's own decoder, and renders the verified badge beside a post — with no wallet, no account and nothing installed. The publisher view connects to a wallet and holds a credential but stops short of a proof: browser wallets speak DApp Connector API v4, which passes transactions as serialized strings, while the midnight-js version this contract uses expects objects. An official bridge exists for the proving half and none for the wallet half; writing that adapter is Wave 2 work, specified in docs/wave2-wallet-bridge.md.
 
-**Entry 3 — 06 Sep 2026 · done**
+**Entry 4 — 06 Sep 2026 · done**
 - **Title:** Closing a privacy leak in the disclosed expiry
 - **Body:** Verification discloses the credential's expiry, and an exact per-credential timestamp behaves like a serial number — two posts verified by the same credential share it, so an observer could group a pseudonymous source's posts without ever identifying them. Expiries are now issued rounded up to a shared quarter boundary. Removing the disclosure entirely is designed and deferred.
 
-**Entry 2 — 06 Sep 2026 · done**
+**Entry 5 — 06 Sep 2026 · done**
 - **Title:** Credential registry — prove membership without revealing which credential
 - **Body:** A Merkle tree of credential commitments replaces the single accepted credential. A source proves that one of the registered credentials is theirs, without revealing which. Registration is gated on a registrar secret; the subject derives its own commitment off-chain. The circuit binds the Merkle path to the prover's own commitment — without that, a public path alone would forge a proof — and a regression test plays that attacker.
 
-**Entry 3 — 06 Sep 2026 · done**
+**Entry 6 — 06 Sep 2026 · done**
 - **Title:** Issuer type and expiry bound into the credential
 - **Body:** The commitment binds secret, issuer type and expiry together, so a source cannot re-badge itself or extend its own validity while reusing a secret. The ledger records the issuer type per post rather than a bare flag. Expiry is enforced on-chain against block time.
 
-**Entry 4 — 06 Sep 2026 · done**
+**Entry 7 — 06 Sep 2026 · done**
 - **Title:** Contract wired end-to-end — first real proof on the devnet
 - **Body:** The deploy and CLI scripts still targeted the project template's placeholder circuit. They are now wired to the real Vero circuit. A dependency fix that had only existed in the original working copy was also committed, so a clean clone runs from scratch.
 
-**Entry 5 — 05 Sep 2026 · done**
+**Entry 8 — 05 Sep 2026 · done**
 - **Title:** Local dev environment fully operational — Docker stack, wallet, and CLI tested
 - **Body:** The local Midnight dev stack (node + indexer + proof server) is running successfully via Docker. A wallet has been created with test tokens (tNight and DUST), a contract has been deployed, and the CLI plumbing — deploy, transaction submission, ledger reads and balance checking — works end to end. The contract at this point was still the project template's placeholder circuit, so nothing was being verified yet.
 
-**Entry 6 — 01 Sep 2026 · done**
+**Entry 9 — 01 Sep 2026 · done**
 - **Title:** Minimal Compact contract — compiling
 - **Body:** The credential-verification circuit is being written in Compact. Currently working through the validity checks (issuer allowlist, expiry, scope) and getting the contract to compile cleanly against the local Midnight dev stack.
 
-**Entry 7 — 01 Sep 2026 · done**
+**Entry 10 — 01 Sep 2026 · done**
 - **Title:** Product concept and positioning refined
 - **Body:** Vero is now positioned as a verifiable credibility layer — not just identity verification. The core distinction: credibility is the product value, privacy/selective disclosure is a capability. Identity is optional: a source can be fully identified, associated with an organisation, or pseudonymous. The architecture — source → Compact circuit → selective disclosure → frontend — is settled, and the name "Vero" is chosen.
 
-**Entry 8 — 01 Sep 2026 · done**
+**Entry 11 — 01 Sep 2026 · done**
 - **Title:** Competitive landscape, personas and risk notes documented
 - **Body:** Comparison against platform verification, Community Notes, fact-checking, C2PA/Content Credentials, and professional credentials; three personas (reader, credentialed professional, organisation); and risk notes captured in the repo README. This is the foundation the rest of Wave 1 builds on.
 
