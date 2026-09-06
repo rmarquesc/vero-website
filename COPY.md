@@ -174,7 +174,7 @@ Last updated: 06 Sep 2026 (post-registry)
 - **Headline:** Four waves, one foundation.
 
 1. **Wave 01 · Now — Prove:** Credential → ZK proof → Verified. Core mechanism proven end-to-end, with a Merkle registry of issuers and on-chain expiry.
-2. **Wave 02 — Trust:** Governance → Revocation → Public network. Move beyond one registrar: multiple issuers, credential revocation, and deployment off the local devnet.
+2. **Wave 02 — Trust:** Wallet bridge → Governance → Revocation. Close the DApp Connector gap so a source can prove from the browser, then move beyond one registrar and deploy off the local devnet.
 3. **Wave 03 — Expand:** Professionals → Organisations → Pseudonymous sources. Multiple credential types and verification policies.
 4. **Beyond — Infrastructure:** Web → Social → Crypto → APIs. Browser overlay, platform integrations, verification API, broader credential ecosystem.
 
@@ -231,7 +231,7 @@ Last updated: 06 Sep 2026 (post-registry)
 - live
 - last updated 06 Sep 2026
 - wave 1 of 4
-- 6 of 9 milestones complete
+- 7 of 9 milestones complete
 
 **Done:**
 - ✓ Product concept, mechanism and naming finalized
@@ -257,6 +257,10 @@ Last updated: 06 Sep 2026 (post-registry)
 - **Lede:** Newest first. Each entry is one step forward — finished, in progress, or blocked.
 
 **Entry 1 — 06 Sep 2026 · done**
+- **Title:** A reader can now see the signal — and the wallet bridge is scoped for Wave 2
+- **Body:** The demo had been a command line; there is now a frontend. The reader view queries the indexer, decodes the ledger with the contract's own decoder, and renders the verified badge beside a post — with no wallet, no account and nothing installed. The publisher view connects to a wallet and holds a credential but stops short of a proof: browser wallets speak DApp Connector API v4, which passes transactions as serialized strings, while the midnight-js version this contract uses expects objects. An official bridge exists for the proving half and none for the wallet half; writing that adapter is Wave 2 work, specified in docs/wave2-wallet-bridge.md.
+
+**Entry 3 — 06 Sep 2026 · done**
 - **Title:** Closing a privacy leak in the disclosed expiry
 - **Body:** Verification discloses the credential's expiry, and an exact per-credential timestamp behaves like a serial number — two posts verified by the same credential share it, so an observer could group a pseudonymous source's posts without ever identifying them. Expiries are now issued rounded up to a shared quarter boundary. Removing the disclosure entirely is designed and deferred.
 
@@ -371,9 +375,9 @@ Last updated: 06 Sep 2026 (post-registry)
 - → Demo frontend + video
 
 **Wave 2 · Trust (Sep – Oct):**
+- Wallet bridge — prove from the browser (DApp Connector ↔ midnight-js)
 - Multiple registrars and issuer governance
-- Credential revocation
-- Public-network deployment
+- Credential revocation and public-network deployment
 
 **Wave 3 · Expand (Oct – Nov):**
 - Multiple credential types

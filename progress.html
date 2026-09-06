@@ -48,7 +48,7 @@
         <span class="sep"></span>
         <span>wave <b>1 of 4</b></span>
         <span class="sep"></span>
-        <span><b>6</b> of <b>9</b> milestones complete</span>
+        <span><b>7</b> of <b>9</b> milestones complete</span>
       </div>
 
       <div class="status-groups">
@@ -61,18 +61,19 @@
             <li class="done"><span class="box">✓</span> Compact contract — Merkle issuer registry, expiry enforcement</li>
             <li class="done"><span class="box">✓</span> End-to-end proof flow on the local devnet</li>
             <li class="done"><span class="box">✓</span> Automated checks — end-to-end and proof-forgery regression</li>
+            <li class="done"><span class="box">✓</span> Reader view — verified badge rendered from live ledger state</li>
           </ul>
         </div>
         <div class="status-group">
           <h3 class="status-group-label now">Now</h3>
           <ul class="checklist">
-            <li class="active"><span class="box"></span> Demo frontend connected end-to-end</li>
+            <li class="active"><span class="box"></span> Demo video</li>
           </ul>
         </div>
         <div class="status-group">
           <h3 class="status-group-label next">Next</h3>
           <ul class="checklist">
-            <li><span class="box"></span> Demo video</li>
+            <li><span class="box"></span> Simulation tests that run without a devnet</li>
             <li><span class="box"></span> Wave 1 submission</li>
           </ul>
         </div>
@@ -112,6 +113,20 @@
              status classes:  done  |  in-progress  |  blocked
              Remember to bump the "last updated" date above.
              ========================================================== -->
+
+        <article class="log-entry">
+          <div class="log-meta">
+            <time datetime="2026-09-06">06 Sep 2026</time>
+            <span class="log-status done">done</span>
+          </div>
+          <div class="log-body">
+            <h3>A reader can now see the signal — and the wallet bridge is scoped for Wave 2</h3>
+            <p>The demo had been a command line. There is now a frontend, and the reader view works: it queries the indexer, decodes the ledger with the contract's own decoder, and renders the verified badge beside a post. It deliberately needs no wallet, no account and nothing installed — checking a source should cost the reader nothing, and that asymmetry is the product.</p>
+            <p>The publisher view — proving a credential inside the browser — connects to a wallet and holds a credential, but stops short of a proof. Browser wallets implement the DApp Connector API v4, which passes transactions as serialized strings and returns nothing from submit; the midnight-js version this contract is built on expects objects and a transaction id. An official bridge exists for the proving half of that gap, and none for the wallet half.</p>
+            <p>Writing that adapter is <b>Wave 2 work</b>, and deliberately so. The Wave 1 criterion asks whether the frontend connects to the contract as part of a functional end-to-end experience, and the reader view does. Spending the remaining days on an undocumented bridge written blind is worth less than the testing work carrying the same weight. It is also a clean piece of engineering to show next Wave, with a visible before and after: a demo that reads verifications becomes one where a source produces them.</p>
+            <a class="link" href="https://github.com/rmarquesc/vero-demo/blob/main/docs/wave2-wallet-bridge.md">Read the technical specification →</a>
+          </div>
+        </article>
 
         <article class="log-entry">
           <div class="log-meta">
