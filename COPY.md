@@ -424,7 +424,7 @@ Last updated: 06 Sep 2026 (post-registry)
 - **Label:** Adoption
 - **Headline:** Two problems, not one.
 - **A — Who displays it:** Web3-native publishing first (Mirror, Farcaster, Lens), then individual publications, then platforms.
-- **B — Who issues it:** the same world as A first — protocols, foundations and programmes (Midnight, Solana, SheFi) already decide who finished a cohort and who contributes; that is participation rather than licence, a different claim and a different issuer type. Professional bodies follow: journalists' associations, medical councils, orders.
+- **B — Who issues it:** the same world as A first — protocol foundations, ecosystem programmes and developer cohorts already decide who completed a programme and who contributes (Midnight's own Build Club is one); that is participation rather than licence, a different claim and a different issuer type. Professional bodies follow: journalists' associations, medical councils, orders.
 - **Why that order:** ecosystem issuers and Web3-native publishing are the same population, so the first credential and the first place to show it arrive together instead of waiting for each other.
 - **Why before the ecosystem exists:** a source who cannot safely use their own name wants this regardless; generated content made "a credentialed human stands behind this" a signal no checkmark can give.
 - **Callout:** One registrar *per issuer* — whoever grants a credential is the only one who can say whether it still holds. The contract has worked that way since Wave 1.
