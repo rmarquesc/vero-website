@@ -1056,7 +1056,10 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
 .slide-inner{
   max-width:920px;
   margin:0 auto;
-  padding:0 42px;
+  /* Bottom padding, not just side padding: the deck controls are fixed at
+     bottom right, and without clearance the last line of a long slide ends up
+     tucked against the edge with nothing to scroll into. */
+  padding:0 42px 88px;
   width:100%;
 }
 
@@ -1306,7 +1309,7 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
   margin:48px 0 0;
 }
 .slide.slide-team{align-items:stretch;}
-.slide-team .slide-inner{display:flex;flex-direction:column;}
+.slide-team .slide-inner{display:flex;flex-direction:column;padding-bottom:40px;}
 .slide-team .slide-foot-left{margin-top:auto;padding-top:32px;}
 
 /* deck controls */
