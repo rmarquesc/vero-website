@@ -1046,7 +1046,13 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
   display:none;
   height:100%;
   padding:24px 0;
-  align-items:center;
+  /* Not align-items:center. Centring a flex child that is taller than its
+     container makes the overflow spill above the scroll origin, so the top of
+     a long slide can never be scrolled to. flex-start plus margin:auto on the
+     child centres exactly the same way when there is room, and collapses to
+     the top when there is not — which is the behaviour a scroll container
+     needs. */
+  align-items:flex-start;
   border-top:1px solid rgba(255,255,255,.075);
   overflow-y:auto;
 }
@@ -1055,12 +1061,12 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
 
 .slide-inner{
   max-width:920px;
-  margin:0 auto;
   /* Bottom padding, not just side padding: the deck controls are fixed at
      bottom right, and without clearance the last line of a long slide ends up
      tucked against the edge with nothing to scroll into. */
   padding:0 42px 88px;
   width:100%;
+  margin:auto;
 }
 
 /* slide header elements */
@@ -1309,7 +1315,7 @@ tr.us th,tr.us td{background:rgba(51,230,227,.055);}
   margin:48px 0 0;
 }
 .slide.slide-team{align-items:stretch;}
-.slide-team .slide-inner{display:flex;flex-direction:column;padding-bottom:40px;}
+.slide-team .slide-inner{display:flex;flex-direction:column;padding-bottom:40px;margin:0 auto;}
 .slide-team .slide-foot-left{margin-top:auto;padding-top:32px;}
 
 /* deck controls */
