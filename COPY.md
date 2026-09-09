@@ -1,7 +1,7 @@
 # Vero — Site Copy
 
 Complete copy document for the Vero website, including all pages and the slide deck.
-Last updated: 06 Sep 2026 (post-registry)
+Last updated: 09 Sep 2026 (demo recorded)
 
 ---
 
@@ -29,7 +29,7 @@ Last updated: 06 Sep 2026 (post-registry)
 - **Kicker:** Verifiable credibility · Midnight Buildathon
 - **Headline:** Credibility you can prove.
 - **Lede:** Vero is a verifiable credibility layer for people and organisations publishing online. Prove a relevant credential or accountability claim — and choose what you reveal.
-- **CTAs:** Follow the build / See the mechanism
+- **CTAs:** Watch the demo / See the mechanism / Follow the build
 
 ### Hero specimen (visual annotations)
 
@@ -247,9 +247,9 @@ Last updated: 06 Sep 2026 (post-registry)
 
 **Stamp row:**
 - live
-- last updated 06 Sep 2026
-- wave 1 of 4
-- 9 of 11 milestones complete
+- last updated 09 Sep 2026
+- wave 1 of 3
+- 10 of 11 milestones complete
 
 **Done:**
 - ✓ Product concept, mechanism and naming finalized
