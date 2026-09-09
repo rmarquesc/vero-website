@@ -189,7 +189,7 @@ Last updated: 09 Sep 2026 (demo recorded)
 
 ### § 09 — Roadmap
 
-- **Headline:** Four waves, one foundation.
+- **Headline:** Three waves, one foundation.
 
 1. **Wave 01 · Now — Prove:** Credential → ZK proof → Verified. Core mechanism proven end-to-end, with a Merkle registry of issuers and on-chain expiry.
 2. **Wave 02 — Publish:** Close the DApp Connector gap so a source can prove from the browser, and deploy off the local devnet onto a public network.
@@ -249,7 +249,7 @@ Last updated: 09 Sep 2026 (demo recorded)
 - live
 - last updated 09 Sep 2026
 - wave 1 of 3
-- 10 of 11 milestones complete
+- 11 of 11 milestones complete
 
 **Done:**
 - ✓ Product concept, mechanism and naming finalized
