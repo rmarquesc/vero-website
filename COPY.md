@@ -192,8 +192,8 @@ Last updated: 09 Sep 2026 (demo recorded)
 - **Headline:** Four waves, one foundation.
 
 1. **Wave 01 · Now — Prove:** Credential → ZK proof → Verified. Core mechanism proven end-to-end, with a Merkle registry of issuers and on-chain expiry.
-2. **Wave 02 — Trust:** Wallet bridge → Governance → Revocation. Close the DApp Connector gap so a source can prove from the browser, then move beyond one registrar and deploy off the local devnet.
-3. **Wave 03 — Expand:** Professionals → Organisations → Pseudonymous sources. Multiple credential types and verification policies.
+2. **Wave 02 — Publish:** Close the DApp Connector gap so a source can prove from the browser, and deploy off the local devnet onto a public network.
+3. **Wave 03 — Harden:** Per-credential revocation, and governance by quorum rather than by a single key.
 4. **Beyond — Infrastructure:** Web → Social → Crypto → APIs. Browser overlay, platform integrations, verification API, broader credential ecosystem.
 
 ### § 10 — Current Status
@@ -403,19 +403,18 @@ Last updated: 09 Sep 2026 (demo recorded)
 - ✓ Merkle registry — one registrar per issuer type, expiry enforced
 - ✓ Reader view — badge from live ledger state
 - ✓ Contract test suite — 30 tests, no devnet needed
-- → Demo video
+- ✓ Demo video
 
-**Wave 2 · Trust (Sep – Oct):**
+**Wave 2 · Publish (Sep 27 – Oct 17):**
 - Wallet bridge — prove from the browser (DApp Connector ↔ midnight-js)
-- Governance beyond a single key — multisig or on-chain vote
-- Credential revocation and public-network deployment
+- Public-network deployment, with the reader view hosted
 
-**Wave 3 · Expand (Oct – Nov):**
-- Multiple credential types
-- Verification policies
-- Broader demo surface
+**Wave 3 · Harden (Oct 27 – Nov 16):**
+- Credential revocation — withdraw one without disturbing the rest
+- Governance beyond a single key — multisig or on-chain vote
 
 **Beyond · Infrastructure (Future):**
+- Multiple credential types, verification policies
 - Portable verification across websites and social feeds
 - Browser integrations, APIs
 
